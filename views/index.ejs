@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+
+	<div class="ui divided items container">
+	<% blogs.forEach(function(blog){ %>
+		<div class="item">
+			<div class="image">
+		      <img src="<%= blog.image %>">
+			</div>
+			<div class="content">
+		      	<a class="header" href="/blogs/<%= blog._id%>" ><%= blog.title %></a>
+		      	<div class="meta">
+		        <span><%= blog.created.toDateString() %></span>
+		      	</div>
+		        <p>
+		        	<%- blog.body.substring(0,100) %>...
+		        </p>
+		    	<a id="indexButton"class="ui mini bottom aligned primary button" href="/blogs/<%= blog._id%>">Show More</a>
+			</div>
+		</div>
+	<% }) %>
+	</div>
+<% include partials/footer %>

@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<div class="ui container" id="show">
+	<div class="ui text segment">
+		<img src="<%= data.image %>" class="ui centered rounded huge image" id="">
+		<div class="ui huge header" id=""><%= data.title %></div>
+		<span><%= data.created.toDateString() %></span>
+		<p><%- data.body %>
+		</p>
+		<a href="/blogs/<%= data._id %>/edit" class="ui  floated medium primary inverted button">Edit</a>
+		<form action="/blogs/<%= data._id %>?_method=DELETE" method="post" id="del">
+			<button class="ui medium red inverted button" >Delete</button>
+		</form>
+	</div>
+</div>
+
+<% include partials/footer %>
